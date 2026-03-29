@@ -1,0 +1,246 @@
+/* style.css - OP Bank Finnish Premium Style */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --op-blue: #0033A0;
+    --op-blue-light: #005EB8;
+    --op-accent: #00A3E0;
+    --bg-main: #FFFFFF;
+    --bg-light: #F8F9FB;
+    --text-primary: #1A1A1A;
+    --text-secondary: #555555;
+    --border: #E5E7EB;
+    --success: #00A86B;
+    --danger: #E63939;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: transparent;
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.banking-container {
+    width: 1100px;
+    height: 640px;
+    background: var(--bg-main);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    border: 1px solid var(--border);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 290px;
+    background: linear-gradient(180deg, var(--op-blue) 0%, #002266 100%);
+    color: white;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("https://i.ibb.co.com/v4S6j9cq/bg.jpg") center/cover;
+    opacity: 0.07;
+    z-index: 0;
+}
+
+.sidebar-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.op-logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 48px;
+}
+
+.nav-option {
+    padding: 14px 20px;
+    margin-bottom: 8px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15.5px;
+}
+
+.nav-option:hover,
+.nav-option.selected {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateX(6px);
+}
+
+.sidebar-header {
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 22px;
+    margin: 32px 0;
+    backdrop-filter: blur(8px);
+}
+
+.player-name {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.balance {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    background: var(--bg-light);
+    padding: 36px 40px;
+    overflow-y: auto;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+}
+
+.view-title {
+    font-size: 29px;
+    font-weight: 600;
+    color: var(--op-blue);
+    margin-bottom: 28px;
+}
+
+/* Buttons */
+.action-button {
+    background: linear-gradient(135deg, var(--op-blue), var(--op-blue-light));
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 51, 160, 0.35);
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 51, 160, 0.45);
+}
+
+/* Card panels */
+.card-panel {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+/* Premium Card */
+.master-card-control {
+    width: 340px;
+    height: 200px;
+    background: linear-gradient(135deg, #001F5E, #0033A0);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 51, 160, 0.5);
+}
+
+.master-card-title {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.master-card-name {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    color: white;
+    font-size: 17px;
+}
+
+/* Transactions */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.positive { color: var(--success); font-weight: 600; }
+.negative { color: var(--danger); font-weight: 600; }
+
+/* Form elements */
+select, input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    background: white;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: var(--op-blue);
+    box-shadow: 0 0 0 4px rgba(0, 51, 160, 0.15);
+}
+
+/* Notification */
+.notification {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    z-index: 200;
+    animation: slideIn 0.4s ease;
+}
+
+.notification.success { background: var(--success); color: white; }
+.notification.error { background: var(--danger); color: white; }
+
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
